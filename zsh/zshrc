@@ -12,6 +12,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/colored-man-pages
   zgen oh-my-zsh plugins/colorize 
   zgen oh-my-zsh plugins/command-not-found
+  zgen oh-my-zsh plugins/catimg
   zgen oh-my-zsh plugins/compleat
   zgen oh-my-zsh plugins/extract
   zgen oh-my-zsh plugins/rsync
@@ -22,6 +23,13 @@ if ! zgen saved; then
 
   # oh-my-zsh theme
   zgen oh-my-zsh themes/steeef
+
+  # syntax highlight
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-history-substring-search
+
+  # completions
+  zgen load zsh-users/zsh-completions src
 
   # other plugins
   zgen load djui/alias-tips
