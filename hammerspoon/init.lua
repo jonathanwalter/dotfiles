@@ -11,7 +11,7 @@ require("hs.window")
 
 -- Custom stuff
 require "windowborder"
-require "windowfocus"  
+require "windowfocus"
 
 -----------------------------------------------
 -- Reload config on write
