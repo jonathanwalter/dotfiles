@@ -40,3 +40,6 @@ fi
 
 # thefuck
 eval "$(thefuck --alias)"
+
+# Homebrew path
+export PATH="/usr/local/sbin:$PATH"
