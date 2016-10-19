@@ -37,4 +37,4 @@ elif [[ -h ~/.hammerspoon ]]; then
 fi
 
 echo "Linking .hammerspoon to $(dirname $(realpath $0))/hammerspoon"
-ln -s $DIR/zsh/hammerspoon ~/.hammerspoon
+ln -s $DIR/hammerspoon ~/.hammerspoon
