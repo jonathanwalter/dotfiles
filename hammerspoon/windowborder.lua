@@ -16,7 +16,7 @@ function drawBorder()
 
     border = hs.drawing.rectangle(hs.geometry.rect(fx, fy, fw, fh))
     border:setStrokeWidth(10)
-    border:setStrokeColor({["red"]=1.0,["blue"]=0,["green"]=0,["alpha"]=0.80})
+    border:setStrokeColor({["red"]=0.42,["blue"]=0.28,["green"]=0.73,["alpha"]=0.80})
     border:setRoundedRectRadii(5.0, 5.0)
     border:setStroke(true):setFill(false)
     border:setLevel("floating")
