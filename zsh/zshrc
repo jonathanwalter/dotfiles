@@ -18,8 +18,11 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/rsync
   zgen oh-my-zsh plugins/screen
   zgen oh-my-zsh plugins/sublime
-  zgen oh-my-zsh plugins/brew
-  zgen oh-my-zsh plugins/osx
+  # osx specific plugins
+  if [[ $(uname) = "Darwin" ]]; then
+    zgen oh-my-zsh plugins/brew
+    zgen oh-my-zsh plugins/osx
+  fi
 
   # oh-my-zsh theme
   zgen oh-my-zsh themes/steeef
