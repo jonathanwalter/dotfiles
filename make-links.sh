@@ -26,15 +26,17 @@ fi
 echo "Linking .zgen to $(dirname $(realpath $0))/zsh/zgen"
 ln -s $DIR/zsh/zgen ~/.zgen
 
-
+# osx specifics
+if [[ $(uname) = "Darwin" ]]; then
 ################# hammerspoon
-if [[ -d ~/.hammerspoon && ! -h ~/.hammerspoon ]]; then
-  echo Backing up old .hammerspoon to ~/.hammerspoon.$DATE 
-  mv ~/.hammerspoon ~/.hammerspoon.$DATE
-elif [[ -h ~/.hammerspoon ]]; then
-  echo "Unlinking old link"
-  unlink ~/.hammerspoon
-fi
+  if [[ -d ~/.hammerspoon && ! -h ~/.hammerspoon ]]; then
+    echo Backing up old .hammerspoon to ~/.hammerspoon.$DATE 
+    mv ~/.hammerspoon ~/.hammerspoon.$DATE
+  elif [[ -h ~/.hammerspoon ]]; then
+    echo "Unlinking old link"
+    unlink ~/.hammerspoon
+  fi
 
-echo "Linking .hammerspoon to $(dirname $(realpath $0))/hammerspoon"
-ln -s $DIR/hammerspoon ~/.hammerspoon
+  echo "Linking .hammerspoon to $(dirname $(realpath $0))/hammerspoon"
+  ln -s $DIR/hammerspoon ~/.hammerspoon
+fi
