@@ -26,6 +26,22 @@ fi
 echo "Linking .zgen to $(dirname $(realpath $0))/zsh/zgen"
 ln -s $DIR/zsh/zgen ~/.zgen
 
+
+################# tmux.conf
+if [[ -d ~/.tmux.conf && ! -h ~/.tmux.conf ]]; then
+  echo Backing up old .tmux.conf to ~/.tmux.conf.$DATE 
+  mv ~/.tmux.conf ~/.tmux.conf.$DATE
+elif [[ -h ~/.tmux.conf ]]; then
+  echo "Unlinking old link"
+  unlink ~/.tmux.conf
+fi
+
+echo "Linking .tmux.conf to $(dirname $(realpath $0))/zsh/tmux.conf"
+ln -s $DIR/zsh/tmux.conf ~/.tmux.conf
+
+
+
+
 # osx specifics
 if [[ $(uname) = "Darwin" ]]; then
 ################# hammerspoon
