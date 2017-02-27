@@ -36,8 +36,8 @@ elif [[ -h ~/.tmux.conf ]]; then
   unlink ~/.tmux.conf
 fi
 
-echo "Linking .tmux.conf to $(dirname $(realpath $0))/zsh/tmux.conf"
-ln -s $DIR/zsh/tmux.conf ~/.tmux.conf
+echo "Linking .tmux.conf to $(dirname $(realpath $0))/tmux.conf"
+ln -s $DIR/tmux.conf ~/.tmux.conf
 
 
 
