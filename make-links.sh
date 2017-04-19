@@ -36,11 +36,33 @@ elif [[ -h ~/.tmux.conf ]]; then
   unlink ~/.tmux.conf
 fi
 
-echo "Linking .tmux.conf to $(dirname $(realpath $0))/zsh/tmux.conf"
-ln -s $DIR/zsh/tmux.conf ~/.tmux.conf
+echo "Linking .tmux.conf to $(dirname $(realpath $0))/tmux.conf"
+ln -s $DIR/tmux.conf ~/.tmux.conf
 
 
+################# .vimrc
+if [[ -d ~/.vimrc && ! -h ~/.vimrc ]]; then
+  echo Backing up old .vimrc to ~/.vimrc.$DATE 
+  mv ~/.vimrc ~/.vimrc.$DATE
+elif [[ -h ~/.vimrc ]]; then
+  echo "Unlinking old link"
+  unlink ~/.vimrc
+fi
 
+echo "Linking .vimrc to $(dirname $(realpath $0))/vim/vimrc"
+ln -s $DIR/vim/vimrc ~/.vimrc
+
+################# .vim
+if [[ -d ~/.vim && ! -h ~/.vim ]]; then
+  echo Backing up old .vim to ~/.vim.$DATE 
+  mv ~/.vim ~/.vim.$DATE
+elif [[ -h ~/.vim ]]; then
+  echo "Unlinking old link"
+  unlink ~/.vimrc
+fi
+
+echo "Linking .vimrc to $(dirname $(realpath $0))/vim/vim"
+ln -s $DIR/vim/vim ~/.vim
 
 # osx specifics
 if [[ $(uname) = "Darwin" ]]; then
