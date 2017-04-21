@@ -6,7 +6,7 @@ if [[ -f ~/.zshrc && ! -h ~/.zshrc ]]; then
 	echo Backing up old .zshrc to ~/.zshrc.$DATE 
 	mv ~/.zshrc ~/.zshrc.$DATE
 elif [[ -h ~/.zshrc ]]; then
-	echo "Unlinking old link"
+	echo "Unlinking old zshrc"
 	unlink ~/.zshrc
 fi
 
@@ -19,7 +19,7 @@ if [[ -d ~/.zgen && ! -h ~/.zgen ]]; then
 	echo Backing up old .zgen to ~/.zgen.$DATE 
 	mv ~/.zgen ~/.zgen.$DATE
 elif [[ -h ~/.zgen ]]; then
-	echo "Unlinking old link"
+	echo "Unlinking old zgen"
 	unlink ~/.zgen
 fi
 
@@ -32,7 +32,7 @@ if [[ -d ~/.tmux.conf && ! -h ~/.tmux.conf ]]; then
   echo Backing up old .tmux.conf to ~/.tmux.conf.$DATE 
   mv ~/.tmux.conf ~/.tmux.conf.$DATE
 elif [[ -h ~/.tmux.conf ]]; then
-  echo "Unlinking old link"
+  echo "Unlinking old tmux"
   unlink ~/.tmux.conf
 fi
 
@@ -45,7 +45,7 @@ if [[ -d ~/.vimrc && ! -h ~/.vimrc ]]; then
   echo Backing up old .vimrc to ~/.vimrc.$DATE 
   mv ~/.vimrc ~/.vimrc.$DATE
 elif [[ -h ~/.vimrc ]]; then
-  echo "Unlinking old link"
+  echo "Unlinking old vimrc"
   unlink ~/.vimrc
 fi
 
@@ -57,11 +57,11 @@ if [[ -d ~/.vim && ! -h ~/.vim ]]; then
   echo Backing up old .vim to ~/.vim.$DATE 
   mv ~/.vim ~/.vim.$DATE
 elif [[ -h ~/.vim ]]; then
-  echo "Unlinking old link"
-  unlink ~/.vimrc
+  echo "Unlinking old .vim"
+  unlink ~/.vim
 fi
 
-echo "Linking .vimrc to $(dirname $(realpath $0))/vim/vim"
+echo "Linking .vim to $(dirname $(realpath $0))/vim/vim"
 ln -s $DIR/vim/vim ~/.vim
 
 # osx specifics
