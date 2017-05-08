@@ -37,6 +37,7 @@ set wildignore=*.o,*~,*.pyc
 
 " Line Numbers PWN!
 set relativenumber
+set number
 
 "Always show current position
 set ruler
