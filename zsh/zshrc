@@ -3,6 +3,7 @@ source "${HOME}/.zgen/zgen.zsh"
 
 # if the init scipt doesn't exist
 if ! zgen saved; then
+  echo "Creating a zgen save"
 
   # load oh-my-zsh
   zgen oh-my-zsh
@@ -20,7 +21,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/sublime
   # osx specific plugins
   if [[ $(uname) = "Darwin" ]]; then
-    zgen oh-my-zsh plugins/brew
+    #zgen oh-my-zsh plugins/brew
     zgen oh-my-zsh plugins/osx
   fi
 
@@ -43,6 +44,19 @@ fi
 
 # thefuck
 eval "$(thefuck --alias)"
+
+# make dir and go cd into it
+function mde() {
+  if [ -n "$1" ]
+  then
+    mkdir -p $1 && cd $1
+  else
+    echo "Need exactly one argument"
+  fi
+}
+
+# Auto-reload for zgen
+ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
 
 # Homebrew path
 export PATH="/usr/local/sbin:$PATH"
