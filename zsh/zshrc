@@ -45,7 +45,7 @@ fi
 # thefuck
 eval "$(thefuck --alias)"
 
-# make dir and go cd into it
+# make dir and cd into it
 function mde() {
   if [ "$#" -eq "1" ]
   then
