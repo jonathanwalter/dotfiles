@@ -47,7 +47,7 @@ eval "$(thefuck --alias)"
 
 # make dir and go cd into it
 function mde() {
-  if [ -n "$1" ]
+  if [ "$#" -eq "1" ]
   then
     mkdir -p $1 && cd $1
   else
