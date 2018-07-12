@@ -1,93 +1,42 @@
+#!/bin/bash
+
 DIR=$(dirname $(realpath $0)) #$(dirname $0)
 DATE=$(date "+%Y-%m-%d-%H.%M")
 
-################# zshrc
-if [[ -f ~/.zshrc && ! -h ~/.zshrc ]]; then
-	echo Backing up old .zshrc to ~/.zshrc.$DATE 
-	mv ~/.zshrc ~/.zshrc.$DATE
-elif [[ -h ~/.zshrc ]]; then
-	echo "Unlinking old zshrc"
-	unlink ~/.zshrc
-fi
+function link_files() {
+    if [[ -f ~/.$1 && ! -h ~/.$1 ]]; then
+        echo Backing up old .$1 to ~/.$1.$DATE 
+        mv ~/.$1 ~/.$1.$DATE
+    elif [[ -h ~/.$1 ]]; then
+        echo "Unlinking old .$1"
+        unlink ~/.$1
+    fi
 
-echo "Linking .zshrc to $(dirname $(realpath $0))/zsh/zshrc"
-ln -s $DIR/zsh/zshrc ~/.zshrc
+    echo "Linking ~/.$1 to $(dirname $(realpath $0))/$2"
+    ln -s $DIR/$2 ~/.$1
+}
 
+function link_folders() {
+    if [[ -d ~/.$1 && ! -h ~/.$1 ]]; then
+      echo Backing up old .$1 to ~/.$1.$DATE 
+      mv ~/.$1 ~/.$1.$DATE
+    elif [[ -h ~/.$1 ]]; then
+      echo "Unlinking old .$1"
+      unlink ~/.$1
+    fi
 
-################# zgen
-if [[ -d ~/.zgen && ! -h ~/.zgen ]]; then
-	echo Backing up old .zgen to ~/.zgen.$DATE 
-	mv ~/.zgen ~/.zgen.$DATE
-elif [[ -h ~/.zgen ]]; then
-	echo "Unlinking old zgen"
-	unlink ~/.zgen
-fi
+    echo "Linking .$1 to $(dirname $(realpath $0))/$2"
+    ln -s $DIR/$2 ~/.$1
+}
 
-echo "Linking .zgen to $(dirname $(realpath $0))/zsh/zgen"
-ln -s $DIR/zsh/zgen ~/.zgen
-
-
-################# tmux.conf
-if [[ -d ~/.tmux.conf && ! -h ~/.tmux.conf ]]; then
-  echo Backing up old .tmux.conf to ~/.tmux.conf.$DATE 
-  mv ~/.tmux.conf ~/.tmux.conf.$DATE
-elif [[ -h ~/.tmux.conf ]]; then
-  echo "Unlinking old tmux"
-  unlink ~/.tmux.conf
-fi
-
-echo "Linking .tmux.conf to $(dirname $(realpath $0))/tmux.conf"
-ln -s $DIR/tmux.conf ~/.tmux.conf
-
-
-################# .vimrc
-if [[ -d ~/.vimrc && ! -h ~/.vimrc ]]; then
-  echo Backing up old .vimrc to ~/.vimrc.$DATE 
-  mv ~/.vimrc ~/.vimrc.$DATE
-elif [[ -h ~/.vimrc ]]; then
-  echo "Unlinking old vimrc"
-  unlink ~/.vimrc
-fi
-
-echo "Linking .vimrc to $(dirname $(realpath $0))/vim/vimrc"
-ln -s $DIR/vim/vimrc ~/.vimrc
-
-################# .vim
-if [[ -d ~/.vim && ! -h ~/.vim ]]; then
-  echo Backing up old .vim to ~/.vim.$DATE 
-  mv ~/.vim ~/.vim.$DATE
-elif [[ -h ~/.vim ]]; then
-  echo "Unlinking old .vim"
-  unlink ~/.vim
-fi
-
-echo "Linking .vim to $(dirname $(realpath $0))/vim/vim"
-ln -s $DIR/vim/vim ~/.vim
-
-
-################# .gitignore
-if [[ -d ~/.gitignore && ! -h ~/.gitignore ]]; then
-  echo Backing up old .gitignore to ~/.gitignore.$DATE 
-  mv ~/.gitignore ~/.gitignore.$DATE
-elif [[ -h ~/.gitignore ]]; then
-  echo "Unlinking old link"
-  unlink ~/.gitignore
-fi
-
-echo "Linking .gitignore to $(dirname $(realpath $0))/gitignore"
-ln -s $DIR/gitignore ~/.gitignore
+link_files "gitignore" "gitignore"
+link_files "tmux.conf" "tmux.conf"
+link_files "vimrc" "vim/vimrc"
+link_folders "vim" "vim/vim"
+link_files "zshrc" "zsh/zshrc"
+link_folders "zgen" "zsh/zgen"
 
 # osx specifics
 if [[ $(uname) = "Darwin" ]]; then
-################# hammerspoon
-  if [[ -d ~/.hammerspoon && ! -h ~/.hammerspoon ]]; then
-    echo Backing up old .hammerspoon to ~/.hammerspoon.$DATE 
-    mv ~/.hammerspoon ~/.hammerspoon.$DATE
-  elif [[ -h ~/.hammerspoon ]]; then
-    echo "Unlinking old link"
-    unlink ~/.hammerspoon
-  fi
-
-  echo "Linking .hammerspoon to $(dirname $(realpath $0))/hammerspoon"
-  ln -s $DIR/hammerspoon ~/.hammerspoon
+    link_files "hammerspoon" "hammerspoon"
 fi
