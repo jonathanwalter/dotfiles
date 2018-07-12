@@ -71,3 +71,9 @@ export PATH="$HOME/bin:$PATH"
 
 # iterm shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# theme settings
+BLOX_BLOCK__CWD_TRUNC=5
+
+# pyenv-virtualenv
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
