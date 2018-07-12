@@ -64,6 +64,19 @@ fi
 echo "Linking .vim to $(dirname $(realpath $0))/vim/vim"
 ln -s $DIR/vim/vim ~/.vim
 
+
+################# .gitignore
+if [[ -d ~/.gitignore && ! -h ~/.gitignore ]]; then
+  echo Backing up old .gitignore to ~/.gitignore.$DATE 
+  mv ~/.gitignore ~/.gitignore.$DATE
+elif [[ -h ~/.gitignore ]]; then
+  echo "Unlinking old link"
+  unlink ~/.gitignore
+fi
+
+echo "Linking .gitignore to $(dirname $(realpath $0))/gitignore"
+ln -s $DIR/gitignore ~/.gitignore
+
 # osx specifics
 if [[ $(uname) = "Darwin" ]]; then
 ################# hammerspoon
