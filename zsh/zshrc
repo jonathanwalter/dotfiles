@@ -77,3 +77,13 @@ BLOX_BLOCK__CWD_TRUNC=5
 
 # pyenv-virtualenv
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# linux specific stuff
+if [[ $(uname) = "Linux" ]]; then
+  source ~/.profile
+fi
+
+# gitignore.io api
+function gi() { 
+  curl -L -s https://www.gitignore.io/api/$@
+}
