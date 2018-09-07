@@ -30,6 +30,7 @@ function link_folders() {
 }
 
 link_files "gitignore" "gitignore"
+link_files "gitconfig" "gitconfig"
 link_files "tmux.conf" "tmux.conf"
 link_files "vimrc" "vim/vimrc"
 link_folders "vim" "vim/vim"
