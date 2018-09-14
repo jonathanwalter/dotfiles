@@ -72,6 +72,9 @@ export PATH="$HOME/bin:$PATH"
 # iterm shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# load zshrc_local
+test -e "${HOME}/.zshrc_local" && source "${HOME}/.zshrc_local"
+
 # theme settings
 BLOX_BLOCK__CWD_TRUNC=5
 
