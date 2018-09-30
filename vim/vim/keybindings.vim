@@ -24,8 +24,8 @@ nmap n nzz
 nmap N Nzz
 
 " Ctrl-Tab to switch between buffers (ctrl-shift-tab for backwards)
-nmap <C-Tab> :tabnext<CR>
-nmap <C-S-Tab> :tabprev<CR>
+nmap <C-Tab> :bn<CR>
+nmap <C-S-Tab> :bp<CR>
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using Ctrl+w + <movement>
 map <c-j> <c-w>j
