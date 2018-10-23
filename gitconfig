@@ -1,0 +1,5 @@
+[user]
+	name = Jonathan Walter
+	email = jonathan@twotype.se
+[core]
+	excludesfile = /home/jonathan/.gitignore
