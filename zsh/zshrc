@@ -40,6 +40,8 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-history-substring-search
   zgen load zsh-users/zsh-completions src
+
+  autoload -U bashcompinit && bashcompinit
   source /usr/local/etc/bash_completion.d/az
 
   # other plugins
