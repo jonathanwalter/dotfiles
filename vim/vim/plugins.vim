@@ -29,9 +29,28 @@ let g:airline#extensions#tabline#enabled = 1
 " Get molokai color scheme
 Plugin 'tomasr/molokai'
 
-" NERDCommenter
+"""""""""""""" NERDCommenter
 " <leader>cc for line or selection, <leader>c<space> for comment toggle
 Plugin 'scrooloose/nerdcommenter'
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+""""""""""""""""""""""
 
 " used to add stuff on each side of a word or selection 
 " ci<char> to change ds<char> to delete, S<string> to surround
@@ -42,6 +61,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 
-
+""""""""""""""""""""""
 " all of your plugins must be added before the following line
 call vundle#end()            " required
