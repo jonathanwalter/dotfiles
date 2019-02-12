@@ -35,6 +35,7 @@ link_files "tmux.conf" "tmux.conf"
 link_files "vimrc" "vim/vimrc"
 link_folders "vim" "vim/vim"
 link_files "zshrc" "zsh/zshrc"
+link_files "alias" "zsh/alias"
 link_folders "zgen" "zsh/zgen"
 
 # osx specifics
