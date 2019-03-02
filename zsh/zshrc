@@ -70,6 +70,10 @@ ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
 # Homebrew path
 export PATH="/usr/local/sbin:$PATH"
 
+# Go paths
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # add ~/bin to path
 export PATH="$HOME/bin:$PATH"
 

@@ -1,1 +1,2 @@
 alias cim='vim'
+alias svenv='source venv/bin/activate'
