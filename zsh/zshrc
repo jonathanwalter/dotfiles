@@ -107,3 +107,9 @@ fi
 function gi() { 
   curl -L -s https://www.gitignore.io/api/$@
 }
+
+# make python3 virtual environment
+function mkvenv() {
+  python3 -m venv venv
+  source venv/bin/activate
+}
