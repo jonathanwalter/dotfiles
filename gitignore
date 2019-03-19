@@ -1,3 +1,8 @@
+
+# Created by https://www.gitignore.io/api/visualstudiocode,vim,osx
+# Edit at https://www.gitignore.io/?templates=visualstudiocode,vim,osx
+
+### OSX ###
 # General
 .DS_Store
 .AppleDouble
@@ -5,7 +10,6 @@
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -26,9 +30,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-
-# Created by https://www.gitignore.io/api/vim
-
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
@@ -48,5 +49,15 @@ tags
 # Persistent undo
 [._]*.un~
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# End of https://www.gitignore.io/api/vim
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/visualstudiocode,vim,osx
