@@ -52,7 +52,8 @@ if ! zgen saved; then
 fi
 
 # thefuck
-eval "$(thefuck --alias)"
+if which thefuck > /dev/null; then eval "$(thefuck --alias)"; fi
+
 
 # make dir and cd into it
 function mde() {
@@ -71,8 +72,7 @@ ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
 export PATH="/usr/local/sbin:$PATH"
 
 # Go paths
-export GOPATH=$(go env GOPATH)
-export PATH=$PATH:$(go env GOPATH)/bin
+if which go > /dev/null; then export GOPATH=$(go env GOPATH); export PATH=$PATH:$(go env GOPATH)/bin; fi
 
 # add ~/bin to path
 export PATH="$HOME/bin:$PATH"
