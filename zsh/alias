@@ -1,2 +1,6 @@
 alias cim='vim'
 alias svenv='source venv/bin/activate'
+
+if [ -n "$ZSH_VERSION" ]; then
+    alias h='history -i'
+fi
