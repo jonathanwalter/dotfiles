@@ -44,6 +44,7 @@ if ! zgen saved; then
 
   # other plugins
   zgen load djui/alias-tips
+  zgen load jeanpantoja/dotpyvenv
 
   # generate the init script from plugins above
   zgen save
