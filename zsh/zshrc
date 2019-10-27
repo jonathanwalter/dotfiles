@@ -93,6 +93,9 @@ if which go > /dev/null; then export GOPATH=$(go env GOPATH); export PATH=$PATH:
 # add ~/bin to path
 export PATH="$HOME/bin:$PATH"
 
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 # iterm shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -146,3 +149,6 @@ fi
 #   }
 #   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 # fi
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/jonathan/.sdkman"
+[[ -s "/Users/jonathan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jonathan/.sdkman/bin/sdkman-init.sh"
