@@ -18,11 +18,11 @@ function link_files() {
 
 function link_folders() {
     if [[ -d ~/.$1 && ! -h ~/.$1 ]]; then
-      echo Backing up old .$1 to ~/.$1.$DATE 
-      mv ~/.$1 ~/.$1.$DATE
+        echo Backing up old .$1 to ~/.$1.$DATE 
+        mv ~/.$1 ~/.$1.$DATE
     elif [[ -h ~/.$1 ]]; then
-      echo "Unlinking old .$1"
-      unlink ~/.$1
+        echo "Unlinking old .$1"
+        unlink ~/.$1
     fi
 
     echo "Linking .$1 to $(dirname $(realpath $0))/$2"
