@@ -1,5 +1,6 @@
 [user]
 	name = Jonathan Walter
 	email = jonathan@twotype.se
+	signingkey = C6FED351A6B3A275
 [core]
 	excludesfile = /home/jonathan/.gitignore
