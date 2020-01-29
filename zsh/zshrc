@@ -120,7 +120,7 @@ if [[ $(uname) = "Darwin" ]]; then
 fi
 
 # make gpg work
-export GPG_TTY=$(tty)
+if which gpg > /dev/null; then export GPG_TTY=$(tty); fi
 
 # ------------- THESE WILL SLOW YOU DOWN
 
