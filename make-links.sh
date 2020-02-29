@@ -37,6 +37,7 @@ link_folders "vim" "vim/vim"
 link_files "zshrc" "zsh/zshrc"
 link_files "alias" "zsh/alias"
 link_folders "zgen" "zsh/zgen"
+link_folders "config/karabiner" "karabiner"
 
 # osx specifics
 if [[ $(uname) = "Darwin" ]]; then
