@@ -637,19 +637,6 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": []
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 45915,
-                        "vendor_id": 1133
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
@@ -698,7 +685,7 @@
                         "key_code": "f6"
                     },
                     "to": {
-                        "key_code": "illumination_decrement"
+                        "key_code": "illumination_increment"
                     }
                 },
                 {
@@ -706,7 +693,7 @@
                         "key_code": "f7"
                     },
                     "to": {
-                        "key_code": "illumination_increment"
+                        "consumer_key_code": "rewind"
                     }
                 },
                 {
