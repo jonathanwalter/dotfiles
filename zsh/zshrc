@@ -10,6 +10,7 @@ if ! zgen saved; then
   zgen oh-my-zsh
 
   # oh-my-zsh plugins
+  zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/colored-man-pages
   zgen oh-my-zsh plugins/colorize 
@@ -55,6 +56,9 @@ autoload -U +X bashcompinit && bashcompinit
 
 # Azure-cli autocomplete
 test -e "/usr/local/etc/bash_completion.d/az" && source /usr/local/etc/bash_completion.d/az
+
+# autojump tab completion
+[ -f /usr/local/etc/profile.d/autojump.sh ] && source /usr/local/etc/profile.d/autojump.sh
 
 # thefuck
 if which thefuck > /dev/null; then eval "$(thefuck --alias)"; fi
@@ -104,6 +108,9 @@ test -e "${HOME}/.zshrc_local" && source "${HOME}/.zshrc_local"
 
 # load alias file
 test -e "${HOME}/.alias" && source "${HOME}/.alias"
+
+# load local alias file
+test -e "${HOME}/.alias_local" && source "${HOME}/.alias_local"
 
 # theme settings
 BLOX_BLOCK__CWD_TRUNC=5
