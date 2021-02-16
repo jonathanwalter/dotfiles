@@ -1676,7 +1676,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>455 420 796 486 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>247 132 910 612 0 0 1920 1177 </string>
+	<string>127 197 2175 1106 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>283 370 570 452 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1688,6 +1688,18 @@
 			<true/>
 			<key>ASCII Ligatures</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>Recycle</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>Recycle</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1928,10 +1940,14 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Badge Text</key>
+			<string></string>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<false/>
+			<true/>
+			<key>Blur Radius</key>
+			<real>3.1140168940355326</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1995,7 +2011,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Advanced</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -2339,6 +2355,8 @@
 			<key>Normal Font</key>
 			<string>JetBrainsMono-Regular 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
+			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
@@ -3207,18 +3225,22 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.8</string>
-		<string>3.3.1</string>
-		<string>3.3.3</string>
 		<string>3.3.5</string>
-		<string>3.3.7</string>
-		<string>3.2.9</string>
-		<string>3.3.2</string>
+		<string>3.3.3</string>
+		<string>3.3.1</string>
+		<string>3.3.8</string>
+		<string>3.3.12</string>
+		<string>3.3.6</string>
+		<string>3.3.11</string>
 		<string>3.3.4</string>
+		<string>3.3.2</string>
+		<string>3.3.9</string>
+		<string>3.2.9</string>
+		<string>3.3.7</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Helvetica</string>
 		<string>JetBrains Mono</string>
 		<string>Fira Code</string>
 	</array>
@@ -3237,7 +3259,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{384, 766}</string>
+		<string>{47, 859}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
 	<true/>
@@ -3248,7 +3270,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>590913315.04452705</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>15</integer>
+	<integer>31</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3578,6 +3600,14 @@
 				<true/>
 				<key>name</key>
 				<string>style</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>currentTab.currentSession.jobPid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -4014,6 +4044,30 @@
 		<string>0077</string>
 		<string>0078</string>
 	</array>
+	<key>NoSyncToolbeltProportions</key>
+	<dict>
+		<key>proportions</key>
+		<array>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.44426229508196724</real>
+				<key>name</key>
+				<string>Command History</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.22213114754098362</real>
+				<key>name</key>
+				<string>Paste History</string>
+			</dict>
+			<dict>
+				<key>heightAsFraction</key>
+				<real>0.3336065573770492</real>
+				<key>name</key>
+				<string>Recent Directories</string>
+			</dict>
+		</array>
+	</dict>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PerPaneBackgroundImage</key>
@@ -4066,7 +4120,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-23T20:02:33Z</date>
+	<date>2020-11-10T06:15:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -4105,7 +4159,7 @@
 	<false/>
 	<key>ToolbeltTools</key>
 	<array>
-		<string>Command History</string>
+		<string>Recent Directories</string>
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<true/>
@@ -4128,7 +4182,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
