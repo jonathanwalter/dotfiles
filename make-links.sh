@@ -37,6 +37,9 @@ link_folders "vim" "vim/vim"
 link_files "zshrc" "zsh/zshrc"
 link_files "alias" "zsh/alias"
 link_folders "zgen" "zsh/zgen"
+link_files "yabairc" "yabai/yabairc"
+link_files "skhdrc" "yabai/skhdrc"
+
 
 # osx specifics
 if [[ $(uname) = "Darwin" ]]; then
