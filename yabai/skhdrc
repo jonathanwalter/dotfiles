@@ -169,9 +169,17 @@ ctrl + alt + cmd - d : yabai -m window --resize right:-20:0
 ctrl + alt + cmd - a : yabai -m window --resize right:0:20
 # shift + cmd - w : yabai -m window --resize top:0:20
 
-
+# shift focus of windows
 ctrl + alt + cmd - left : yabai -m window --focus prev
 ctrl + alt + cmd - right : yabai -m window --focus next
+ctrl + alt + cmd - up : yabai -m window --focus north
+ctrl + alt + cmd - down : yabai -m window --focus south
+
+# swap with previous or next window in window tree
+ctrl + alt + cmd + shift - left : yabai -m window --swap prev
+ctrl + alt + cmd + shift - right : yabai -m window --swap next
+ctrl + alt + cmd + shift - up : yabai -m window --swap north
+ctrl + alt + cmd + shift - down : yabai -m window --swap south
 
 # switch spaces
 ctrl + alt + cmd - 1 : yabai -m space --focus 1
