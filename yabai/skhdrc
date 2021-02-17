@@ -160,14 +160,17 @@ ctrl + alt + cmd - r : yabai -m space --rotate 90
 ctrl + alt + cmd - space : yabai -m window --toggle zoom-fullscreen
 ctrl + alt + cmd - f : yabai -m window --toggle float
 
-
 # increase window size
-ctrl + alt + cmd - d : yabai -m window --resize right:-20:0
-# shift + alt - w : yabai -m window --resize top:0:-20
+ctrl + alt + cmd - a : yabai -m window --resize left:-20:0
+ctrl + alt + cmd - s : yabai -m window --resize bottom:0:20
+ctrl + alt + cmd - w : yabai -m window --resize top:0:-20
+ctrl + alt + cmd - d : yabai -m window --resize right:20:0
 
 # decrease window size
-ctrl + alt + cmd - a : yabai -m window --resize right:0:20
-# shift + cmd - w : yabai -m window --resize top:0:20
+ctrl + alt + cmd + shift - d : yabai -m window --resize left:20:0
+ctrl + alt + cmd + shift - s : yabai -m window --resize bottom:0:-20
+ctrl + alt + cmd + shift - w : yabai -m window --resize top:0:20
+ctrl + alt + cmd + shift - a : yabai -m window --resize right:-20:0
 
 # shift focus of windows
 ctrl + alt + cmd - left : yabai -m window --focus prev
