@@ -35,7 +35,8 @@ yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^BetterTouchTool$" manage=off
 yabai -m rule --add app="Preferences" manage=off
-yabai -m rule --add app="^Digital Colour Meter$" manage=off
+yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
+yabai -m rule --add app="^Firefox$" title="^Opening .*" layer=above manage=off
 
 
 # global settings
