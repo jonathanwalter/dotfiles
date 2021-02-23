@@ -13,11 +13,12 @@ yabai -m space 3 --label three
 yabai -m space 4 --label four
 yabai -m space 5 --label five
 yabai -m space 6 --label six
-yabai -m space 7 --label se7en
-yabai -m space 8 --label eight
+yabai -m space 7 --label se7en*
+yabai -m space 8 --label eight*
 
 # float first space
-yabai -m config --space 1 layout float
+yabai -m config --space 7 layout float
+yabai -m config --space 8 layout float
 
 # float some apps. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" layer=above manage=off
