@@ -13,12 +13,12 @@ yabai -m space 3 --label three
 yabai -m space 4 --label four
 yabai -m space 5 --label five
 yabai -m space 6 --label six
-yabai -m space 7 --label se7en*
+yabai -m space 7 --label se7en
 yabai -m space 8 --label eight*
 
-# float first space
-yabai -m config --space 7 layout float
+# float space 8
 yabai -m config --space 8 layout float
+
 
 # float some apps. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" layer=above manage=off
@@ -35,7 +35,7 @@ yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^BetterTouchTool$" manage=off
-yabai -m rule --add app="^Übersicht$" manage=off#
+yabai -m rule --add app="^Übersicht$" manage=off
 yabai -m rule --add app="Preferences" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Firefox$" title="^Opening .*" layer=above manage=off
