@@ -49,7 +49,7 @@ rctrl + ralt + rcmd - 5 : yabai -m space --focus 5
 rctrl + ralt + rcmd - 6 : yabai -m space --focus 6
 rctrl + ralt + rcmd - 7 : yabai -m space --focus 7
 rctrl + ralt + rcmd - 8 : yabai -m space --focus 8
-rctrl + ralt + rcmd - x : yabai -m space --focus recent
+rctrl + ralt + rcmd - tab : yabai -m space --focus recent
 
 
 # send to space
