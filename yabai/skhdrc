@@ -68,4 +68,4 @@ rctrl + ralt + rcmd + shift - 8 : yabai -m window --space  8 #; yabai -m space -
 
 # launch apps
 rctrl + ralt + rcmd - return : /Applications/Firefox.app/Contents/MacOS/Firefox
-rctrl + ralt + rcmd + shift - return : open -na Alacritty
+rctrl + ralt + rcmd + lcmd - return : open -na Alacritty
