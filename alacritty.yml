@@ -1,0 +1,115 @@
+TERM: screen-256color
+
+font:
+  size: 15.0
+  normal:
+    family: JetBrains Mono
+    style: Regular
+
+  Bold:
+    family: JetBrains Mono
+    style: Bold
+
+  Italic:
+    family: JetBrains Mono
+    style: Italic
+
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels.
+  # If both are `0`, this setting is ignored.
+  dimensions:
+    columns: 0
+    lines: 0
+
+  decorations: none
+
+  dynamic_title: true
+
+  offset:
+    x: 0
+    y: 2
+
+  glyph_offset:
+    x: 0
+    y: 1
+
+  padding:
+    x: 15
+    y: 10
+
+  dynamic_padding: true
+
+startup_mode: windowed
+
+scrolling:
+  # Specifying '0' will disable scrolling.
+  history: 100000
+
+selection:
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: true
+
+mouse:
+  url:
+    launcher:
+      # This depends on your OS, on Mac it’s `open`
+      program: open
+    modifiers: Command
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+key_bindings:
+  - { key: Key0, mods: Alt, chars: "≈" }
+  - { key: Key1, mods: Alt, chars: "©" }
+  - { key: Key2, mods: Alt, chars: "@" }
+  - { key: Key3, mods: Alt, chars: "£" }
+  - { key: Key4, mods: Alt, chars: "$" }
+  - { key: Key5, mods: Alt, chars: "∞" }
+  - { key: Key6, mods: Alt, chars: "§" }
+  - { key: Key7, mods: Alt, chars: "|" }
+  - { key: Key8, mods: Alt, chars: "[" }
+  - { key: Key9, mods: Alt, chars: "]" }
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+use_thin_strokes: true
+
+live_config_reload: true
+
+# Colors (Monokai Remastered)
+colors:
+  bright:
+    black: "#625e4c"
+    blue: "#9d65ff"
+    cyan: "#58d1eb"
+    green: "#98e024"
+    magenta: "#f4005f"
+    red: "#f4005f"
+    white: "#f6f6ef"
+    yellow: "#e0d561"
+  cursor:
+    cursor: "#fc971f"
+    text: "#000000"
+  normal:
+    black: "#1a1a1a"
+    blue: "#9d65ff"
+    cyan: "#58d1eb"
+    green: "#98e024"
+    magenta: "#f4005f"
+    red: "#f4005f"
+    white: "#c4c5b5"
+    yellow: "#fd971f"
+  primary:
+    background: "#0c0c0c"
+    foreground: "#d9d9d9"
+  selection:
+    background: "#343434"
+    text: "#ffffff"
