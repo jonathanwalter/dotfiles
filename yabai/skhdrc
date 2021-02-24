@@ -1,3 +1,6 @@
+#!/usr/bin/env sh
+
+
 ## Quickly restart the yabai launch agent
 rctrl + ralt + rcmd + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
@@ -22,16 +25,16 @@ rctrl + ralt + rcmd + shift - w : yabai -m window --resize top:0:20
 rctrl + ralt + rcmd + shift - a : yabai -m window --resize right:-20:0
 
 # shift focus of windows
-rctrl + ralt + rcmd + lcmd - left : yabai -m window --focus prev
-rctrl + ralt + rcmd + lcmd - right : yabai -m window --focus next
-rctrl + ralt + rcmd + lcmd - up : yabai -m window --focus north
-rctrl + ralt + rcmd + lcmd - down : yabai -m window --focus south
+rctrl + ralt + rcmd + shift - h : yabai -m window --focus west
+rctrl + ralt + rcmd + shift - j : yabai -m window --focus south
+rctrl + ralt + rcmd + shift - k : yabai -m window --focus north
+rctrl + ralt + rcmd + shift - l : yabai -m window --focus east
 
 # swap with previous or next window in window tree
-rctrl + ralt + rcmd + shift - left : yabai -m window --swap prev
-rctrl + ralt + rcmd + shift - right : yabai -m window --swap next
-rctrl + ralt + rcmd + shift - up : yabai -m window --swap north
-rctrl + ralt + rcmd + shift - down : yabai -m window --swap south
+rctrl + ralt + rcmd + lcmd - h : yabai -m window --swap west
+rctrl + ralt + rcmd + lcmd - j : yabai -m window --swap south
+rctrl + ralt + rcmd + lcmd - k : yabai -m window --swap north
+rctrl + ralt + rcmd + lcmd - l : yabai -m window --swap east
 
 # set insertion point in focused container
 rctrl + ralt + rcmd + lctrl - h : yabai -m window --insert west
@@ -65,6 +68,4 @@ rctrl + ralt + rcmd + shift - 8 : yabai -m window --space  8 #; yabai -m space -
 
 # launch apps
 rctrl + ralt + rcmd - return : /Applications/Firefox.app/Contents/MacOS/Firefox
-
-# rctrl + ralt + rcmd - return : /Users/jonathan/dotfiles/yabai/NewFirefoxWindow.applescript  
-rctrl + ralt + rcmd + shift - return : /Users/jonathan/dotfiles/yabai/NewiTermWindow.applescript 
+rctrl + ralt + rcmd + shift - return : open -na Alacritty
