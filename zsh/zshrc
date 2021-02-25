@@ -133,7 +133,8 @@ if which gpg > /dev/null; then export GPG_TTY=$(tty); fi
 # ------------- THESE WILL SLOW YOU DOWN
 
 # pyenv-virtualenv
-# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 # NVM
 # https://github.com/creationix/nvm
