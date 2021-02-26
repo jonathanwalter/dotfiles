@@ -1,28 +1,15 @@
 # dotfiles
 
-This is my dotfiles (and scripts to set it up) for the following configs.
+These are my dotfiles. There are many like it, but these ones are mine. My dotfiles are my best friend. They are my life. I must master them as I master my life.
 
-`.gitignore` and `.gitconfig`
-for git configuration
-
-`.tmux.conf`
-for tmux
-
-`.vimrc` and `.vim/`
-for vim
-
-`.zshrc`, `.zgen` and `.alias`
-for the shell
-
-`hammerspoon`
-(OS X only)
-
+My dotfiles, without me, are useless. Without my dotfiles I am useless.
 
 ## Setting up
 
 ### 1. Clone the repo
 
 Start by cloning this repo somewhere:
+
 ```
 git clone https://gitlab.com/jonathanwalter/dotfiles.git
 ```
@@ -32,18 +19,20 @@ git clone https://gitlab.com/jonathanwalter/dotfiles.git
 Run the setup script for your platform of choice.
 
 **OS X**
+
 ```
 bash dotfiles/zsh/install-osx.sh
 ```
 
 **Ubuntu**
+
 ```
 bash dotfiles/zsh/install-ubuntu.sh
 ```
 
 ### 3. Make the links
 
-`make-links.sh` sets up symlinks to all the needed files and directories. It is probably a good idea to run it from your home dir. 
+`make-links.sh` sets up symlinks to the needed files and directories. It is probably a good idea to run it from your home dir.
 
 ```
 bash dotfiles/make-links.sh
