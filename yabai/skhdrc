@@ -9,6 +9,7 @@ rctrl + ralt + rcmd - q             : yabai -m window --toggle split
 
 ## --- toggle window fullscreen, float, sticky
 rctrl + ralt + rcmd - space         : yabai -m window --toggle zoom-fullscreen
+rctrl + ralt + rcmd + shift - space : yabai -m window --toggle zoom-parent
 rctrl + ralt + rcmd - f             : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2;
 rctrl + ralt + rcmd + shift - s     : yabai -m window --toggle sticky
 
