@@ -41,6 +41,7 @@ yabai -m rule --add app="^Übersicht$" title="Preferences" manage=off layer=abo
 yabai -m rule --add app=".*" title="Preferences" manage=off layer=above
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Firefox$" title="^Opening .*" layer=above manage=off
+yabai -m rule --add app="^Discord$" title="Discord Updater" manage=off
 
 
 # global settings
@@ -74,14 +75,23 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  10
-yabai -m config bottom_padding               6
-yabai -m config left_padding                 6
-yabai -m config right_padding                6
-yabai -m config window_gap                   12
+yabai -m config top_padding                  20
+# yabai -m config bottom_padding               6
+# yabai -m config left_padding                 6
+# yabai -m config right_padding                6
+# yabai -m config window_gap                   12
+yabai -m config bottom_padding               20
+yabai -m config left_padding                 40
+yabai -m config right_padding                40
+yabai -m config window_gap                   20
 
 # top bar pading
 yabai -m config external_bar                 all:30:0
+
+
+
+
+yabai -m signal --add event=window_destroyed action="$HOME/dotfiles/yabai/window-focus-on-destroy.sh"
 
 
 # Übersicht simple-bar refresh widgets
