@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 ## --- Quickly restart the yabai launch agent
-rctrl + ralt + rcmd + lcmd - r     : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+rctrl + ralt + rcmd + lcmd - r      : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 ## --- rotate tree 90, toggle split
 rctrl + ralt + rcmd - r             : yabai -m space --rotate 90
@@ -46,9 +46,9 @@ rctrl + ralt + rcmd  - up           : yabai -m window --insert north
 rctrl + ralt + rcmd  - right        : yabai -m window --insert east
 
 # Focus window up/down in stack
-rctrl + ralt + rcmd - z     : yabai -m window --focus stack.next || yabai -m window --focus stack.first
-rctrl + ralt + rcmd - q     : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
-rctrl + ralt + rcmd - u     : yabai -m window --toggle float; yabai -m window --toggle float
+rctrl + ralt + rcmd - z             : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+rctrl + ralt + rcmd - q             : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+rctrl + ralt + rcmd - u             : yabai -m window --toggle float; yabai -m window --toggle float
 
 # Add the active window  to the window or stack to the {direction}
 # Note that this only works when the active window does *not* already belong to a stack
@@ -91,6 +91,7 @@ rctrl + ralt + rcmd + lcmd - 8      : yabai -m window --space 8; yabai -m space 
 
 
 ## --- launch apps
-# rctrl + ralt + rcmd - return        : /Applications/Firefox.app/Contents/MacOS/Firefox
-rctrl + ralt + rcmd + lcmd - return        : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
-rctrl + ralt + rcmd - return : open -na Alacritty
+rctrl + ralt + rcmd - return        : open -na Alacritty
+rctrl + ralt + rcmd + lcmd - return : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
+rctrl + ralt + rcmd + lcmd - c      : code -n
+rctrl + ralt + rcmd + lcmd - f      : open $HOME
