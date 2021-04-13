@@ -4,3 +4,11 @@ alias svenv='source venv/bin/activate'
 if [ -n "$ZSH_VERSION" ]; then
     alias h='history -i'
 fi
+
+if which lsd > /dev/null; then
+    alias ls='lsd'
+    alias l='ls -l'
+    alias la='ls -a'
+    alias lla='ls -la'
+    alias lt='ls --tree'
+fi
