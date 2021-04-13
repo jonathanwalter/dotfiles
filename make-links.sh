@@ -41,6 +41,7 @@ link_files "yabairc" "yabai/yabairc"
 link_files "skhdrc" "yabai/skhdrc"
 link_folders "config/lsd" "config/lsd"
 link_folders "config/alacritty" "config/alacritty"
+link_files "p10k.zsh" "p10k.zsh"
 
 
 # osx specifics

@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 zmodload zsh/zprof
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
@@ -19,10 +26,7 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/compleat
   zgen oh-my-zsh plugins/docker
   zgen oh-my-zsh plugins/extract
-  # zgen oh-my-zsh plugins/rsync
-  # zgen oh-my-zsh plugins/screen
   zgen oh-my-zsh plugins/sudo
-  # zgen oh-my-zsh plugins/sublime
 
   # osx specific plugins
   if [[ $(uname) = "Darwin" ]]; then
@@ -33,7 +37,8 @@ if ! zgen saved; then
   # oh-my-zsh theme
   # zgen oh-my-zsh themes/steeef
   # zgen load denysdovhan/spaceship-prompt spaceship
-  zgen load yardnsm/blox-zsh-theme
+  # zgen load yardnsm/blox-zsh-theme
+  zgen load romkatv/powerlevel10k powerlevel10k
 
   # syntax highlight
   zgen load zsh-users/zsh-syntax-highlighting
@@ -163,3 +168,6 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/jonathan/.sdkman"
 [[ -s "/Users/jonathan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jonathan/.sdkman/bin/sdkman-init.sh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
