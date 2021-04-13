@@ -3,15 +3,15 @@ TERM: screen-256color
 font:
   size: 15.0
   normal:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Regular
 
   Bold:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Bold
 
   Italic:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Italic
 
 window:
