@@ -39,7 +39,8 @@ link_files "alias" "zsh/alias"
 link_folders "zgen" "zsh/zgen"
 link_files "yabairc" "yabai/yabairc"
 link_files "skhdrc" "yabai/skhdrc"
-link_files "alacritty.yml" "alacritty.yml"
+link_folders "config/lsd" "config/lsd"
+link_folders "config/alacritty" "config/alacritty"
 
 
 # osx specifics
