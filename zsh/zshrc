@@ -32,6 +32,7 @@ if ! zgen saved; then
   if [[ $(uname) = "Darwin" ]]; then
     # zgen oh-my-zsh plugins/brew
     # zgen oh-my-zsh plugins/osx
+    zgen load Amar1729/yabai-zsh-completions
   fi
 
   # oh-my-zsh theme
@@ -102,8 +103,6 @@ if which go > /dev/null; then export GOPATH=$(go env GOPATH); export PATH=$PATH:
 # add ~/bin to path
 export PATH="$HOME/bin:$PATH"
 
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # iterm shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -116,9 +115,6 @@ test -e "${HOME}/.alias" && source "${HOME}/.alias"
 
 # load local alias file
 test -e "${HOME}/.alias_local" && source "${HOME}/.alias_local"
-
-# theme settings
-BLOX_BLOCK__CWD_TRUNC=5
 
 # linux specific stuff
 if [[ $(uname) = "Linux" ]]; then
