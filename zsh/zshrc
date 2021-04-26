@@ -18,6 +18,7 @@ if ! zgen saved; then
 
   # oh-my-zsh plugins
   zgen oh-my-zsh plugins/autojump
+  zgen oh-my-zsh plugins/asdf
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/colored-man-pages
   zgen oh-my-zsh plugins/colorize 
@@ -130,40 +131,6 @@ fi
 
 # make gpg work
 if which gpg > /dev/null; then export GPG_TTY=$(tty); fi
-
-# ------------- THESE WILL SLOW YOU DOWN
-
-# pyenv-virtualenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-# NVM
-# https://github.com/creationix/nvm
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# LESS SLOW THAN ABOVE
-# https://www.growingwiththeweb.com/2018/01/slow-nvm-init.html
-# Defer initialization of nvm until nvm, node or a node-dependent command is
-# run. Ensure this block is only run once if .bashrc gets sourced multiple times
-# by checking whether __init_nvm is a function.
-
-# if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
-#   export NVM_DIR="$HOME/.nvm"
-#   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-#   declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
-#   function __init_nvm() {
-#     for i in "${__node_commands[@]}"; do unalias $i; done
-#     . "$NVM_DIR"/nvm.sh
-#     unset __node_commands
-#     unset -f __init_nvm
-#   }
-#   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
-# fi
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jonathan/.sdkman"
-[[ -s "/Users/jonathan/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jonathan/.sdkman/bin/sdkman-init.sh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
