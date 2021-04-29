@@ -12,3 +12,6 @@ if which lsd > /dev/null; then
     alias lla='ls -lA'
     alias lt='ls --tree'
 fi
+
+alias kitty-diff="kitty +kitten diff"
+alias icat="kitty +kitten icat"
