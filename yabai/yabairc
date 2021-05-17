@@ -31,6 +31,7 @@ yabai -m rule --add app="^Activity Monitor$" layer=above manage=off
 yabai -m rule --add app="^Archive Manager$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^console$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
@@ -42,11 +43,12 @@ yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Firefox$" title="^Opening .*" layer=above manage=off
 yabai -m rule --add app="^Discord$" title="Discord Updater" manage=off
 yabai -m rule --add app="^Tor Browser" manage=off # tiling affects window size, which gives information
+yabai -m rule --add app="^DaVinci Resolve$" manage=off
 
 
 # global settings
 yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          autofocus
+yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               on # floating windows on top
 yabai -m config window_shadow                on
@@ -76,10 +78,6 @@ yabai -m config mouse_drop_action            swap
 # general space settings
 yabai -m config layout                       bsp
 yabai -m config top_padding                  20
-# yabai -m config bottom_padding               6
-# yabai -m config left_padding                 6
-# yabai -m config right_padding                6
-# yabai -m config window_gap                   12
 yabai -m config bottom_padding               20
 yabai -m config left_padding                 40
 yabai -m config right_padding                40
