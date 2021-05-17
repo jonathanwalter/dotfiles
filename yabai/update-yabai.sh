@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-set +x
+set -x
 
 # stop, and upgrade yabai
 brew services stop yabai
