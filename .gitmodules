@@ -1,3 +1,6 @@
 [submodule "hammerspoon/stackline"]
 	path = hammerspoon/stackline
 	url = https://github.com/AdamWagner/stackline.git
+[submodule "config/kitty/kitty-themes"]
+	path = config/kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes
