@@ -8,24 +8,28 @@ function drawBorder()
     local win = hs.window.focusedWindow()
     if win == nil then return end
 
+    local screen = win:screen()
+    local max = screen:fullFrame()
     local f = win:frame()
-    local fx = f.x - 2
-    local fy = f.y - 2
-    local fw = f.w + 4
-    local fh = f.h + 4
 
-    border = hs.drawing.rectangle(hs.geometry.rect(fx, fy, fw, fh))
-    border:setStrokeWidth(10)
-    border:setStrokeColor({["red"]=0.42,["blue"]=0.28,["green"]=0.73,["alpha"]=0.80})
-    border:setRoundedRectRadii(5.0, 5.0)
-    border:setStroke(true):setFill(false)
-    border:setLevel("floating")
+    border = hs.canvas.new{x=max.x, y=max.y, h=max.h, w=max.w}
+    border:appendElements({
+        type = "rectangle",
+        action="stroke",
+        strokeWidth=3.0,
+        strokeColor= {green=1.0},
+        roundedRectRadii = { xRadius = 6, yRadius = 6 },
+        frame = {x=f.x, y=f.y, h=f.h, w=f.w}
+        })
+
     border:show()
 end
 
 drawBorder()
 
 windows = hs.window.filter.new(nil)
+windows:keepActive()
 windows:subscribe(hs.window.filter.windowFocused, function () drawBorder() end)
 windows:subscribe(hs.window.filter.windowUnfocused, function () drawBorder() end)
-windows:subscribe(hs.window.filter.windowMoved, function () drawBorder() end)
+-- windows:subscribe(hs.window.filter.windowMoved, function () drawBorder() end)
+-- windows:subscribe(hs.window.filter.windowInCurrentSpace, function () drawBorder() end)
