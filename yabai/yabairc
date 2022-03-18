@@ -1,13 +1,10 @@
 #!/usr/bin/env sh
 
-### Load scripting additions for Big Sur ONLY
-if [[ $(uname -r | cut -d"." -f1) == "20" ]]; then 
-    sudo yabai --load-sa;
-    yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa";
-fi
+sudo yabai --load-sa;
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa";
 
 # Custom space names
-yabai -m space 1 --label one
+yabai -m space 1 --label one*
 yabai -m space 2 --label two
 yabai -m space 3 --label three
 yabai -m space 4 --label four
@@ -16,12 +13,13 @@ yabai -m space 6 --label six
 yabai -m space 7 --label se7en
 yabai -m space 8 --label eight*
 
-# float space 8
+# float space 1 and 8
+yabai -m config --space 1 layout float
 yabai -m config --space 8 layout float
 
 
 # app specific settings
-yabai -m rule --add app="^System Preferences$" layer=above manage=off
+yabai -m rule --add app="^System Preferences$" layer='above' manage='off'
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off
@@ -41,8 +39,8 @@ yabai -m rule --add app=".*" title="Settings" manage=off layer=above
 yabai -m rule --add app=".*" title="Software Update" manage=off layer=above
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Firefox$" title="^Opening .*" layer=above manage=off
-yabai -m rule --add app="^Finder$" title="^.* Info$" layer=above manage=off
-yabai -m rule --add app="^Finder$" title="^Copy$" layer=above manage=off
+#yabai -m rule --add app="^Finder$" title="^.* Info$" layer=above manage=off
+#yabai -m rule --add app="^Finder$" title="^Copy$" layer=above manage=off
 yabai -m rule --add app="^Discord$" title="Discord Updater" manage=off
 yabai -m rule --add app="^Tor Browser" manage=off # tiling affects window size, which gives information
 yabai -m rule --add app="^DaVinci Resolve$" manage=off
@@ -52,13 +50,14 @@ yabai -m rule --add app="^Raycast$" manage=off
 # global settings
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
+#yabai -m config focus_follows_mouse          autofocus
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               on # floating windows on top
+# yabai -m config window_topmost               on # floating windows on top
 yabai -m config window_shadow                on
 yabai -m config window_opacity               on
 yabai -m config window_opacity_duration      0.2
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.9
+yabai -m config normal_window_opacity        1.0
 
 yabai -m config window_border                off
 yabai -m config window_border_width          5
@@ -91,9 +90,10 @@ yabai -m config external_bar                 all:30:0
 
 
 
-
-yabai -m signal --add event=window_destroyed action="$HOME/dotfiles/yabai/window-focus-on-destroy.sh"
-
+# focus window on destroy
+# yabai -m signal --add event=window_destroyed action="$HOME/dotfiles/yabai/window-focus-on-destroy.sh"
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
 
 # Übersicht simple-bar refresh widgets
 
