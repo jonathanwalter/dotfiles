@@ -74,3 +74,5 @@ $RECYCLE.BIN/
 
 
 vim/vim/bundle/
+zsh/zgen
+karabiner/automatic_backups/*
