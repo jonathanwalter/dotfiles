@@ -94,8 +94,15 @@ rctrl + ralt + rcmd + lcmd - 8      : yabai -m window --space 8; yabai -m space 
 
 
 ## --- launch apps
-# rctrl + ralt + rcmd - return        : open -na Alacritty
-rctrl + ralt + rcmd - return        : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
+rctrl + ralt + rcmd - return        : open -na Alacritty
+# rctrl + ralt + rcmd - return        : /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~
 rctrl + ralt + rcmd + lcmd - return : MOZ_DISABLE_SAFE_MODE_KEY=1 /Applications/Firefox.app/Contents/MacOS/Firefox
 rctrl + ralt + rcmd + lcmd - c      : code -n
 rctrl + ralt + rcmd + lcmd - f      : open $HOME
+
+
+
+####### switch monitor input to HDMI-2
+
+#rctrl + ralt + rcmd - numpad_enter  : ddcctl -d 1 -i 18
+rctrl + ralt + rcmd - home             : /Users/jonathanwalter/bin/monitor-input.sh
