@@ -47,19 +47,21 @@ scrolling:
   # Specifying '0' will disable scrolling.
   history: 100000
 
+hints:
+  enabled:
+    - regex: "(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-\u009F<>\" {-}\\^⟨⟩`]+"
+      command: open
+      post_processing: true
+      mouse:
+        enabled: true
+        mods: Command
+
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: true
-
-mouse:
-  url:
-    launcher:
-      # This depends on your OS, on Mac it’s `open`
-      program: open
-    modifiers: Command
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }

@@ -1,7 +1,6 @@
 [user]
 	name = Jonathan Walter
 	email = jonathan@twotype.se
-	signingkey = C6FED351A6B3A275
 [core]
 	excludesfile = ~/.gitignore
 [filter "lfs"]
@@ -11,3 +10,9 @@
 	required = true
 [init]
 	defaultBranch = main
+
+[includeIf "gitdir:~/work/"]
+	path = ~/work/.gitconfig
+
+[includeIf "gitdir:~/work/vimond/"]
+	path = ~/work/vimond/.gitconfig
