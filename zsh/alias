@@ -1,5 +1,6 @@
 alias cim='vim'
 alias svenv='source venv/bin/activate'
+alias mkvenv="python3 -m venv venv && source venv/bin/activate"
 
 if [ -n "$ZSH_VERSION" ]; then
     alias h='history -i'
@@ -11,10 +12,4 @@ if which lsd > /dev/null; then
     alias la='ls -A'
     alias lla='ls -lA'
     alias lt='ls --tree'
-fi
-
-if [ $(echo $TERM) = "xterm-kitty" ]; then
-    alias kitty-diff="kitty +kitten diff"
-    alias icat="kitty +kitten icat"
-    alias ssh="kitty +kitten ssh"
 fi
