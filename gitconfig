@@ -1,6 +1,7 @@
 [user]
 	name = Jonathan Walter
 	email = jonathan@twotype.se
+	signingkey = C6FED351A6B3A275
 [core]
 	excludesfile = ~/.gitignore
 [filter "lfs"]
@@ -16,3 +17,5 @@
 
 [includeIf "gitdir:~/work/vimond/"]
 	path = ~/work/vimond/.gitconfig
+[commit]
+	gpgsign = true
