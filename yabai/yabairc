@@ -43,6 +43,7 @@ yabai -m rule --add app="^Tor Browser" manage=off # tiling affects window size, 
 yabai -m rule --add app="^DaVinci Resolve$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^SonicWall Mobile Connect$" manage=off
+yabai -m rule --add app="^AppCleaner$" manage=off
 
 
 # global settings
