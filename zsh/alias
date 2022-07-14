@@ -14,3 +14,7 @@ if which lsd > /dev/null; then
     alias lla='ls -lA'
     alias lt='ls --tree'
 fi
+
+if which ccat > /dev/null; then
+    alias cat='ccat'
+fi
