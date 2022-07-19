@@ -87,7 +87,7 @@ function gi() {
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
 
 # Homebrew path
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/bin:/usr/local/sbin:$PATH"
 
 # Go paths
 if which go > /dev/null; then export GOPATH=$(go env GOPATH); export PATH=$PATH:$(go env GOPATH)/bin; fi
