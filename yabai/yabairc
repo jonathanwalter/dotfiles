@@ -16,7 +16,7 @@ yabai -m config --space 8 layout float
 
 
 # app specific settings
-yabai -m rule --add app="^System Preferences$" layer='above' manage='off'
+yabai -m rule --add app="^System Settings$" layer='above' manage='off'
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Alfred Preferences$" sticky=on layer=above manage=off
@@ -36,14 +36,13 @@ yabai -m rule --add app=".*" title="Settings" manage=off layer=above
 yabai -m rule --add app=".*" title="Software Update" manage=off layer=above
 yabai -m rule --add app="^Digital Colou?r Meter$" manage=off
 yabai -m rule --add app="^Firefox$" title="^Opening .*" layer=above manage=off
-#yabai -m rule --add app="^Finder$" title="^.* Info$" layer=above manage=off
-#yabai -m rule --add app="^Finder$" title="^Copy$" layer=above manage=off
 yabai -m rule --add app="^Discord$" title="Discord Updater" manage=off
 yabai -m rule --add app="^Tor Browser" manage=off # tiling affects window size, which gives information
 yabai -m rule --add app="^DaVinci Resolve$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
 yabai -m rule --add app="^SonicWall Mobile Connect$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
+yabai -m rule --add app="^FortiClient" manage=off
 
 
 # global settings
