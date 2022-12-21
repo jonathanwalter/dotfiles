@@ -9,7 +9,7 @@ if [ -n "$ZSH_VERSION" ]; then
     alias h='history -i'
 fi
 
-if which lsd > /dev/null; then
+if which lsd > /dev/null 2>&1; then
     alias ls='lsd'
     alias l='ls -l'
     alias la='ls -A'
@@ -17,6 +17,8 @@ if which lsd > /dev/null; then
     alias lt='ls --tree'
 fi
 
-if which ccat > /dev/null; then
+if which bat > /dev/null 2>&1; then
+    alias cat='bat'
+elif which ccat > /dev/null 2>&1; then
     alias cat='ccat'
 fi

@@ -65,7 +65,7 @@ test -e "/usr/local/etc/bash_completion.d/az" && source /usr/local/etc/bash_comp
 test -e "/usr/local/etc/profile.d/autojump.sh" && source /usr/local/etc/profile.d/autojump.sh
 
 # thefuck
-if which thefuck > /dev/null; then eval "$(thefuck --alias)"; fi
+if which thefuck > /dev/null 2>&1; then eval "$(thefuck --alias)"; fi
 
 
 # make dir and cd into it
@@ -87,10 +87,16 @@ function gi() {
 ZGEN_RESET_ON_CHANGE=(${HOME}/.zshrc ${HOME}/.zshrc.local)
 
 # Homebrew path
-export PATH="/opt/homebrew/bin:/usr/local/sbin:$PATH"
+if [[ $(uname -m) == "arm64" ]]; 
+then
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+else
+    export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+fi
+
 
 # Go paths
-if which go > /dev/null; then export GOPATH=$(go env GOPATH); export PATH=$PATH:$(go env GOPATH)/bin; fi
+if which go > /dev/null 2>&1; then export GOPATH=$(go env GOPATH); export PATH=$PATH:$(go env GOPATH)/bin; fi
 
 # add ~/bin to path
 export PATH="$HOME/bin:$PATH"
@@ -123,7 +129,7 @@ if [[ $(uname) = "Darwin" ]]; then
 fi
 
 # make gpg work
-if which gpg > /dev/null; then export GPG_TTY=$(tty); fi
+if which gpg > /dev/null 2>&1; then export GPG_TTY=$(tty); fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
