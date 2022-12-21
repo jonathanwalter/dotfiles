@@ -1,13 +1,25 @@
 [user]
 	name = Jonathan Walter
 	email = jonathan@twotype.se
-	signingkey = C6FED351A6B3A275
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMRuXebqLKExPdnTQkbxG+rPSw9ec++3J1kqKutqcE9u
+
 [core]
 	excludesfile = ~/.gitignore
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [init]
 	defaultBranch = main
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+	gpgsign = true
