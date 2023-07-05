@@ -5,6 +5,8 @@ alias mkvenv="python3 -m venv venv && source venv/bin/activate"
 alias bubo="brew update && brew outdated"
 alias bugr="brew upgrade && brew outdated"
 
+alias dg="dig +short"
+
 if [ -n "$ZSH_VERSION" ]; then
     alias h='history -i'
 fi
