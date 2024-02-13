@@ -14,34 +14,14 @@ Start by cloning this repo somewhere:
 git clone https://gitlab.com/jonathanwalter/dotfiles.git
 ```
 
-### 2. Change the shell
+### 2. Run `init.sh`
 
-Run the setup script for your platform of choice.
-
-**OS X**
+Run the init script:
 
 ```
-bash dotfiles/zsh/install-osx.sh
+./init.sh
 ```
 
-**Ubuntu**
+This will install stow and zsh if needed, and then run stow.
 
-```
-bash dotfiles/zsh/install-ubuntu.sh
-```
-
-### 3. Make the links
-
-`make-links.sh` sets up symlinks to the needed files and directories. It is probably a good idea to run it from your home dir.
-
-```
-bash dotfiles/make-links.sh
-```
-
-Log out or reboot for changes to take effect.
-
-### 4. Vim setup
-
-Clone Vundle `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-
-Install vim plugins `vim +PluginInstall +qall`
+It will also install vim plugins.
