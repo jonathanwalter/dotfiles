@@ -1,23 +1,3 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Unbind arrow keys. Gotta learn hjkl at some ponint.
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Up and down arrow, moves line up or down
-
-no <up> ddkP
-no <down> ddp
-no <left> <Nop>
-no <right> <Nop>
-
-" Unbind in insert and visual mode too
-ino <up> <Nop>
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-vno <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <right> <Nop>
-
 " auto center common commands
 nmap G Gzz
 nmap n nzz
