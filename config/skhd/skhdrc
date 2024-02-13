@@ -31,6 +31,10 @@ rctrl + ralt + rcmd + shift - a     : yabai -m window --resize left:-100:0  || y
 rctrl + ralt + rcmd + shift - s     : yabai -m window --resize bottom:0:100 || yabai -m window --resize top:0:100
 rctrl + ralt + rcmd + shift - w     : yabai -m window --resize top:0:-100   || yabai -m window --resize bottom:0:-100
 rctrl + ralt + rcmd + shift - d     : yabai -m window --resize right:100:0  || yabai -m window --resize left:100:0
+rctrl + ralt + rcmd + lcmd - a      : yabai -m window --move rel:-100:0
+rctrl + ralt + rcmd + lcmd - s      : yabai -m window --move rel:0:100
+rctrl + ralt + rcmd + lcmd - w      : yabai -m window --move rel:0:-100
+rctrl + ralt + rcmd + lcmd - d      : yabai -m window --move rel:100:0
 
 # ## --- shift focus of windows
 rctrl + ralt + rcmd - h             : yabai -m window --focus west
@@ -88,7 +92,8 @@ rctrl + ralt + rcmd + shift - 8     : yabai -m window --space 8
 
 
 ## --- launch apps
-rctrl + ralt + rcmd - return        : osascript /Users/jonathan/code/dotfiles/yabai/NewiTermWindow.applescript
+rctrl + ralt + rcmd - return        : wezterm
+# rctrl + ralt + rcmd - return        : osascript /Users/jonathan/code/dotfiles/yabai/NewiTermWindow.applescript
 # rctrl + ralt + rcmd - return      : open -na Alacritty
 rctrl + ralt + rcmd - b             : MOZ_DISABLE_SAFE_MODE_KEY=1 open -n -a Firefox
 # rctrl + ralt + rcmd - return      : osascript /Users/jonathan/code/dotfiles/yabai/NewFirefoxWindow.applescript
@@ -102,4 +107,4 @@ rctrl + ralt + rcmd - f             : open $HOME
 ####### switch monitor input to HDMI-2
 
 #rctrl + ralt + rcmd - numpad_enter  : ddcctl -d 1 -i 18
-rctrl + ralt + rcmd - home             : /Users/jonathanwalter/bin/monitor-input.sh
+rctrl + ralt + rcmd - home             : /Users/jonathan/bin/monitor-input.sh
