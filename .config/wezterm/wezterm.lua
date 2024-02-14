@@ -66,12 +66,12 @@ config.colors = {
 
 config.inactive_pane_hsb = {
   saturation = 0.1,
-  brightness = 0.5,
+  brightness = 1,
 }
 
 config.use_fancy_tab_bar = false
 config.tab_max_width = 32
-
+config.hide_tab_bar_if_only_one_tab = true
 
 
 
