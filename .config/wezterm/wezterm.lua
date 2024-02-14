@@ -83,15 +83,20 @@ config.send_composed_key_when_left_alt_is_pressed = true
 config.send_composed_key_when_right_alt_is_pressed = false
 
 config.keys = {
-  { key = 'd', mods = 'CMD', action = act.SplitHorizontal },
-  { key = 'd', mods = 'CMD|SHIFT', action = act.SplitVertical },
+  { key = 'd',          mods = 'CMD', action = act.SplitHorizontal },
+  { key = 'd',          mods = 'CMD|SHIFT', action = act.SplitVertical },
   { key = 'LeftArrow',  mods = 'CMD|ALT', action = act.ActivatePaneDirection 'Left' },
   { key = 'RightArrow', mods = 'CMD|ALT', action = act.ActivatePaneDirection 'Right' },
   { key = 'UpArrow',    mods = 'CMD|ALT', action = act.ActivatePaneDirection 'Up' },
   { key = 'DownArrow',  mods = 'CMD|ALT', action = act.ActivatePaneDirection 'Down' },
-  { key = "+", mods = "CMD", action = "IncreaseFontSize" },
-  { key = "-", mods = "CMD", action = "DecreaseFontSize" },
-  { key = "0", mods = "CMD", action = "ResetFontSize" },
+  { key = "+",          mods = "CMD", action = "IncreaseFontSize" },
+  { key = "-",          mods = "CMD", action = "DecreaseFontSize" },
+  { key = "0",          mods = "CMD", action = "ResetFontSize" },
+  -- Make Option-Left/right backward-/foreward-word
+  {key="LeftArrow",     mods="OPT", action=wezterm.action{SendString="\x1bb"}},
+  {key="RightArrow",    mods="OPT", action=wezterm.action{SendString="\x1bf"}},
+  {key="LeftArrow",     mods="CMD", action=wezterm.action{SendString="^A"}},
+  {key="RightArrow",    mods="CMD", action=wezterm.action{SendString="^E"}},
 }
 
 
