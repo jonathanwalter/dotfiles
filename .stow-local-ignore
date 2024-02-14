@@ -2,3 +2,5 @@
 .editorconfig
 README.md
 init.sh
+.DS_Store
+.gitignore
