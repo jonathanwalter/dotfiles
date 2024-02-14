@@ -8,6 +8,8 @@ local act = wezterm.action
 
 local config = {}
 
+config.front_end = "WebGpu"
+
 config.window_decorations = "RESIZE"
 config.window_padding = {
     left = 20,
@@ -16,12 +18,17 @@ config.window_padding = {
     bottom = 15,
   }
 
-config.font = wezterm.font("JetBrainsMono Nerd Font", {weight=600})
-config.font_size = 15.0
+config.font = wezterm.font_with_fallback {
+  "JetBrainsMono Nerd Font",
+  "SFMono Nerd Font",
+  "MesloLGS NF",
+}
+
+config.font_size = 16.0
 config.command_palette_font_size = 16.0
 config.adjust_window_size_when_changing_font_size = false
 
-config.color_scheme = 'Dark Pastel'
+config.color_scheme = 'Monokai Remastered'
 local bg = wezterm.get_builtin_color_schemes()[config.color_scheme].background
 
 config.colors = {
@@ -82,6 +89,9 @@ config.keys = {
   { key = 'RightArrow', mods = 'CMD|ALT', action = act.ActivatePaneDirection 'Right' },
   { key = 'UpArrow',    mods = 'CMD|ALT', action = act.ActivatePaneDirection 'Up' },
   { key = 'DownArrow',  mods = 'CMD|ALT', action = act.ActivatePaneDirection 'Down' },
+  { key = "+", mods = "CMD", action = "IncreaseFontSize" },
+  { key = "-", mods = "CMD", action = "DecreaseFontSize" },
+  { key = "0", mods = "CMD", action = "ResetFontSize" },
 }
 
 
