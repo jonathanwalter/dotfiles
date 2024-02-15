@@ -3,4 +3,6 @@
 README.md
 init.sh
 .DS_Store
+.config/.DS_Store
+.vim/.DS_Store
 .gitignore
