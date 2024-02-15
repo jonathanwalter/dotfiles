@@ -29,6 +29,7 @@ config.command_palette_font_size = 16.0
 config.adjust_window_size_when_changing_font_size = false
 
 config.color_scheme = 'Monokai Remastered'
+config.color_scheme = 'catppuccin-mocha'
 local bg = wezterm.get_builtin_color_schemes()[config.color_scheme].background
 
 config.colors = {
