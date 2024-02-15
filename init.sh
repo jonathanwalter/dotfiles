@@ -34,6 +34,12 @@ fi
 
 stow . -t $HOME --restow --dotfiles
 
+if test ! -r ~/.config/tmux/plugins/tpm; then
+  git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+  ~/.config/tmux/plugins/tpm/bin/install_plugins
+fi
+
+
 if ! test -r ~/.vim/bundle/Vundle.vim; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
