@@ -75,3 +75,4 @@ $RECYCLE.BIN/
 
 vim/vim/bundle/
 .config/karabiner/automatic_backups/*
+.config/zsh/.zsh_plugins.zsh
