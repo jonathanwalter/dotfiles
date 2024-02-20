@@ -53,6 +53,7 @@ yabai -m rule --add app="^Vimari$" manage=off
 yabai -m rule --add app="^Microsoft Remote Desktop$" manage=off
 yabai -m rule --add app="^Reminders$" manage=off
 yabai -m rule --add app="^Browserosaurus" manage=off border=off
+yabai -m rule --add app="^Velja" manage=off border=off
 
 
 # global settings
