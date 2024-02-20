@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # ## --- Quickly restart the yabai launch agent
-rctrl + ralt + rcmd + lcmd - r      : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+rctrl + ralt + rcmd + lcmd - r      : yabai --restart-service
 
 # ## --- rotate tree 90, toggle split
 rctrl + ralt + rcmd - r             : yabai -m space --rotate 90
@@ -9,12 +9,13 @@ rctrl + ralt + rcmd + shift - r     : yabai -m window --toggle split
 
 # ## --- toggle window fullscreen, float, sticky
 rctrl + ralt + rcmd - space         : yabai -m window --toggle zoom-fullscreen
-# rctrl + ralt + rcmd + shift - space : yabai -m window --toggle zoom-parent
+rctrl + ralt + rcmd + shift - space : yabai -m window --toggle zoom-parent
 # rctrl + ralt + rcmd - f             : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2;
+rctrl + ralt + rcmd + shift - f     : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2;
 # rctrl + ralt + rcmd + shift - s     : yabai -m window --toggle sticky
 
 # ## --- toggle float for entire space
-rctrl + ralt + rcmd - y     : yabai -m space --layout "$([ "$(yabai -m query --spaces --space | jq '.type')" = '"bsp"' ] && echo float || echo bsp)"
+rctrl + ralt + rcmd - y             : yabai -m space --layout "$([ "$(yabai -m query --spaces --space | jq '.type')" = '"bsp"' ] && echo float || echo bsp)"
 
 # ## --- toggle PiP
 # rctrl + ralt + rcmd - p             : yabai -m window --toggle border; yabai -m window --toggle pip; yabai -m window --toggle float
@@ -33,12 +34,11 @@ rctrl + ralt + rcmd + shift - w     : yabai -m window --resize top:0:-100   || y
 rctrl + ralt + rcmd + shift - d     : yabai -m window --resize right:100:0  || yabai -m window --resize left:100:0
 
 # ## --- shift focus of windows
-rctrl + ralt + rcmd - h             : yabai -m window --focus west
+rctrl + ralt + rcmd - h             : yabai -m window --focus west || yabai -m display --focus prev
 rctrl + ralt + rcmd - j             : yabai -m window --focus south
 rctrl + ralt + rcmd - k             : yabai -m window --focus north
-rctrl + ralt + rcmd - l             : yabai -m window --focus east
-rctrl + ralt + rcmd - n             : yabai -m window --focus next
-rctrl + ralt + rcmd - m             : yabai -m window --focus prev
+rctrl + ralt + rcmd - l             : yabai -m window --focus east || yabai -m display --focus next
+rctrl + ralt + rcmd - tab           : yabai -m window --focus recent
 
 # ## --- swap with previous or next window in window tree
 rctrl + ralt + rcmd + lcmd - h      : yabai -m window --swap west
@@ -88,7 +88,8 @@ rctrl + ralt + rcmd + shift - 8     : yabai -m window --space 8
 
 
 ## --- launch apps
-rctrl + ralt + rcmd - return        : osascript /Users/jonathan/code/dotfiles/yabai/NewiTermWindow.applescript
+rctrl + ralt + rcmd - return        : wezterm-gui
+# rctrl + ralt + rcmd - return        : osascript /Users/jonathan/code/personal/dotfiles/yabai/NewiTermWindow.applescript
 # rctrl + ralt + rcmd - return      : open -na Alacritty
 rctrl + ralt + rcmd - b             : MOZ_DISABLE_SAFE_MODE_KEY=1 open -n -a Firefox
 # rctrl + ralt + rcmd - return      : osascript /Users/jonathan/code/dotfiles/yabai/NewFirefoxWindow.applescript
@@ -102,4 +103,4 @@ rctrl + ralt + rcmd - f             : open $HOME
 ####### switch monitor input to HDMI-2
 
 #rctrl + ralt + rcmd - numpad_enter  : ddcctl -d 1 -i 18
-rctrl + ralt + rcmd - home             : /Users/jonathanwalter/bin/monitor-input.sh
+rctrl + ralt + rcmd - home          : /Users/jonathanwalter/bin/monitor-input.sh
