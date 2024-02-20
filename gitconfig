@@ -1,7 +1,7 @@
 [user]
 	name = Jonathan Walter
-	email = jonathan@twotype.se
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMRuXebqLKExPdnTQkbxG+rPSw9ec++3J1kqKutqcE9u
+	email = jonathan.walter@kb.se
+	activeidm = work
 
 [core]
 	excludesfile = ~/.gitignore
@@ -20,6 +20,25 @@
 
 [gpg "ssh"]
 	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-
-[commit]
-	gpgsign = true
+[gitidm "work"]
+	name = Jonathan Walter
+	email = jonathan.walter@kb.se
+	sshKey = /Users/jonathan/.ssh/id_ed25519
+	sshCommand = ssh -i /Users/jonathan/.ssh/id_ed25519 -o IdentitiesOnly=yes -F /dev/null
+	signingKey = /Users/jonathan/.ssh/id_ed25519
+	signCommits = true
+[include]
+	path = /Users/jonathan/.gitconfig_idm_work
+[gitidm "personal"]
+	name = Jonathan Walter
+	email = jonathan@walter.pink
+	sshKey = /Users/jonathan/.ssh/id_rsa
+	sshCommand = ssh -i /Users/jonathan/.ssh/id_rsa -o IdentitiesOnly=yes -F /dev/null
+	signingKey = /Users/jonathan/.ssh/id_rsa
+	signCommits = true
+[includeIf "gitdir:/Users/jonathan/code/work/"]
+	idm = work
+	path = /Users/jonathan/.gitconfig_idm_work
+[includeIf "gitdir:/Users/jonathan/code/personal/"]
+	idm = personal
+	path = /Users/jonathan/.gitconfig_idm_personal
