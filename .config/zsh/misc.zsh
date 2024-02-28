@@ -12,3 +12,9 @@ fi
 
 # make gpg work
 if which gpg > /dev/null 2>&1; then export GPG_TTY=$(tty); fi
+
+# init the fuck
+eval $(thefuck --alias)
+
+# init zoxide
+eval "$(zoxide init zsh)"
