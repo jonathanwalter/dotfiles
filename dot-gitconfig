@@ -1,7 +1,7 @@
 [user]
 	name = Jonathan Walter
 	email = jonathan@twotype.se
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMRuXebqLKExPdnTQkbxG+rPSw9ec++3J1kqKutqcE9u
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBTuCukKJu6mP8F8+vhh3XjYX5lWQq9zIBoVEAmFfyY+
 
 [core]
 	excludesfile = ~/.gitignore
