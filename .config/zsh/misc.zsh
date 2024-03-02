@@ -14,7 +14,11 @@ fi
 if which gpg > /dev/null 2>&1; then export GPG_TTY=$(tty); fi
 
 # init the fuck
-eval $(thefuck --alias)
+if which thefuck > /dev/null 2>&1; then
+  eval $(thefuck --alias)
+fi
 
 # init zoxide
-eval "$(zoxide init zsh)"
+if which zoxide > /dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
