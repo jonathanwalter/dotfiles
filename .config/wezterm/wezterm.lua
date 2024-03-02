@@ -93,11 +93,17 @@ config.keys = {
   { key = "+",          mods = "CMD", action = "IncreaseFontSize" },
   { key = "-",          mods = "CMD", action = "DecreaseFontSize" },
   { key = "0",          mods = "CMD", action = "ResetFontSize" },
-  -- Make Option-Left/right backward-/foreward-word
-  {key="LeftArrow",     mods="OPT", action=wezterm.action{SendString="\x1bb"}},
-  {key="RightArrow",    mods="OPT", action=wezterm.action{SendString="\x1bf"}},
-  {key="LeftArrow",     mods="CMD", action=wezterm.action{SendString="^A"}},
-  {key="RightArrow",    mods="CMD", action=wezterm.action{SendString="^E"}},
+  -- Make ctrl/Option-Left/right backward-/foreward-word
+  { key="LeftArrow",     mods="OPT", action = act  { SendString="\x1bb" } },
+  { key="RightArrow",    mods="OPT", action = act  { SendString="\x1bf" } },
+  { key="LeftArrow",     mods="CTRL", action = act { SendString="\x1bb" } },
+  { key="RightArrow",    mods="CTRL", action = act { SendString="\x1bf" } },
+  { key="LeftArrow",     mods="CMD", action = act.SendKey { key = 'a', mods = 'CTRL' } },
+  { key="RightArrow",    mods="CMD", action = act.SendKey { key = 'e', mods = 'CTRL' } },
+
+  { key="LeftArrow",     mods="CMD|SHIFT", action=act.ActivateTabRelative(-1) },
+  { key="RightArrow",    mods="CMD|SHIFT", action=act.ActivateTabRelative(1) },
+
 }
 
 
