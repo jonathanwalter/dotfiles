@@ -1,4 +1,8 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+
 alias cim='vim'
+
 alias svenv='source venv/bin/activate'
 alias mkvenv="python3 -m venv venv && source venv/bin/activate"
 
