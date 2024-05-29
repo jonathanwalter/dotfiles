@@ -1,22 +1,17 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 
-
-
-
-
-
 local config = {}
 
 config.front_end = "WebGpu"
 
 config.window_decorations = "RESIZE"
 config.window_padding = {
-    left = 20,
-    right = 20,
-    top = 15,
-    bottom = 15,
-  }
+  left = 20,
+  right = 20,
+  top = 15,
+  bottom = 15,
+}
 
 config.font = wezterm.font_with_fallback {
   "JetBrainsMono Nerd Font",
@@ -30,22 +25,34 @@ config.adjust_window_size_when_changing_font_size = false
 
 config.color_scheme = 'Monokai Remastered'
 config.color_scheme = 'catppuccin-mocha'
+
 local bg = wezterm.get_builtin_color_schemes()[config.color_scheme].background
+local fg = wezterm.get_builtin_color_schemes()[config.color_scheme].foreground
+local titlebar_bg = 'rgb(20, 20, 35)'
+
+config.window_frame = {
+  font = wezterm.font { family = 'JetBrainsMono Nerd Font', weight = 'Bold' },
+  font_size = 16.0,
+  active_titlebar_bg = titlebar_bg,
+  inactive_titlebar_bg = titlebar_bg,
+}
 
 config.colors = {
   tab_bar = {
     background = bg,
 
     active_tab = {
-      bg_color = '#2b2042',
-      fg_color = '#c0c0c0',
+      bg_color = bg,
+      fg_color = fg,
       intensity = 'Bold',
     },
 
     inactive_tab = {
-      bg_color = bg,
+      bg_color = titlebar_bg,
       fg_color = '#555',
     },
+
+    inactive_tab_edge = titlebar_bg,
 
     inactive_tab_hover = {
       bg_color = bg,
@@ -69,13 +76,6 @@ config.inactive_pane_hsb = {
   saturation = 0.1,
   brightness = 1,
 }
-
-config.use_fancy_tab_bar = false
-config.tab_max_width = 32
-config.hide_tab_bar_if_only_one_tab = true
-
-
-
 
 config.scrollback_lines = 10000
 
@@ -106,30 +106,53 @@ config.keys = {
 
 }
 
+function current_hostname(pane)
+    local procinfo = pane:get_foreground_process_info()
+    local name = pane:get_title()
+    local hostname = ""
 
+    if procinfo then
+        -- ssh hostname: hack using argv
+        if name == "ssh" then
+            local argv = procinfo.argv
+            for i = 2, #argv do
+                hostname = hostname .. tostring(argv[i]) .. ' '
+            end
+            hostname = hostname:sub(1, -2) -- remove trailing space
+        -- lima virtual machine
+        elseif string.find(name, "lima-") then
+            hostname = string.match(name, "lima%-(.-):")
+            hostname = "lima[" .. hostname .. "]"
+        -- assume localhost
+        else
+            hostname = 'localhost'
+        end
+    end
 
+    return hostname
+end
 
+config.status_update_interval = 1000
 
+wezterm.on('update-right-status', function(window, pane)
+    local status_hostname = current_hostname(pane)
+    local status_fg = 'White'
 
--- function tab_title(tab_info)
---   local title = tab_info.tab_title
---   -- if the tab title is explicitly set, take that
---   if title and #title > 0 then
---     return title
---   end
---   -- Otherwise, use the title from the active pane in that tab
---   return tab_info.active_pane.title
--- end
+    if status_hostname == 'localhost' then
+        status_fg = 'Green'
+    elseif string.match(status_hostname, "lima%[") then
+        status_fg = 'Blue'
+    elseif pane:get_title() == "ssh" then
+        status_fg = 'Red'
+    end
 
--- wezterm.on('format-tab-title',
---   function(tab, tabs, panes, config, hover)
-
---     local title = string.format("  %s: %s  ", tab.tab_index + 1, tab.tab_info.tab_title)
---     title = wezterm.truncate_right(title, config.tab_max_width - 2)
-
---     return {{ Text = title }}
---   end
--- )
+    window:set_right_status(wezterm.format {
+        { Attribute = { Intensity = 'Bold' } },
+        { Foreground = { AnsiColor = status_fg } },
+        { Background = { Color = titlebar_bg } },
+        { Text = status_hostname .. '  ' }
+    })
+end)
 
 
 
