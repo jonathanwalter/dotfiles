@@ -152,12 +152,33 @@ wezterm.on('update-right-status', function(window, pane)
         { Background = { Color = titlebar_bg } },
         { Text = status_hostname .. '  ' }
     })
+
 end)
 
 
 
 
 
+function tab_title(tab_info)
+  local title = tab_info.tab_title
+  if title and #title > 0 then -- explicitly set
+    return title
+  end
+  return tab_info.active_pane.title --title from the active pane
+end
+
+wezterm.on(
+  'format-tab-title',
+  function(tab, tabs, panes, config, hover, max_width)
+    local title = tab_title(tab)
+
+    return {
+      -- { Background = { Color = 'blue' } },
+      { Text = ' ' .. tab.tab_index .. ': ' .. title .. ' ' },
+    }
+
+  end
+)
 
 
 
