@@ -1,6 +1,6 @@
 # linux specific stuff
 if [[ $(uname) = "Linux" ]]; then
-  source ~/.profile
+  test -e ~/.profile && source ~/.profile
 fi
 
 # osx specific stuff
