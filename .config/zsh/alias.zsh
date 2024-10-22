@@ -18,6 +18,7 @@ fi
 if which lsd > /dev/null 2>&1; then
     alias ls='lsd'
     alias l='ls -l'
+    alias ll='ls -l'
     alias la='ls -A'
     alias lla='ls -lA'
     alias lt='ls --tree'
