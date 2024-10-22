@@ -189,6 +189,7 @@ local process_icons = {
   ['ruby'] = wezterm.nerdfonts.cod_ruby,
   ['node'] = wezterm.nerdfonts.dev_nodejs_small,
   ['ssh'] = wezterm.nerdfonts.md_remote_desktop,
+  ['tmux'] = wezterm.nerdfonts.fa_th_large,
 }
 
 
