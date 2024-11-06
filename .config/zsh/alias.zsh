@@ -11,6 +11,8 @@ alias bugr="brew upgrade && brew outdated"
 
 alias dg='dig +short'
 
+alias k='kubectl'
+
 if [ -n "$ZSH_VERSION" ]; then
     alias h='history -i'
 fi
