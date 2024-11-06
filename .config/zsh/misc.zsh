@@ -22,3 +22,7 @@ fi
 if which zoxide > /dev/null 2>&1; then
   eval "$(zoxide init --cmd cd zsh)"
 fi
+
+
+# init krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
