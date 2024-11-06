@@ -15,6 +15,3 @@ test -e "${HOME}/.alias_local" && source "${HOME}/.alias_local"
 
 # fzf
 test -e "${HOME}/.fzf.zsh" && source ~/.fzf.zsh
-
-# activate mise
-test -e "${HOME}/.local/bin/mise" && eval "$(~/.local/bin/mise activate zsh)"
