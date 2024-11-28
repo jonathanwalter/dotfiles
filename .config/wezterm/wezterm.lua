@@ -31,6 +31,8 @@ config.adjust_window_size_when_changing_font_size = false
 config.color_scheme = 'Monokai Remastered'
 config.color_scheme = 'catppuccin-mocha'
 
+config.hide_tab_bar_if_only_one_tab = true
+
 local bg = wezterm.get_builtin_color_schemes()[config.color_scheme].background
 local fg = wezterm.get_builtin_color_schemes()[config.color_scheme].foreground
 local titlebar_bg = 'rgb(20, 20, 35)'
