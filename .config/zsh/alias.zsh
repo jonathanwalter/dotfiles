@@ -13,17 +13,18 @@ alias dg='dig +short'
 
 alias k='kubectl'
 
+alias l='ls -l'
+alias ll='ls -l'
+alias la='ls -A'
+alias lla='ls -lA'
+alias lt='ls --tree'
+
 if [ -n "$ZSH_VERSION" ]; then
     alias h='history -i'
 fi
 
 if which lsd > /dev/null 2>&1; then
     alias ls='lsd'
-    alias l='ls -l'
-    alias ll='ls -l'
-    alias la='ls -A'
-    alias lla='ls -lA'
-    alias lt='ls --tree'
 fi
 
 if which bat > /dev/null 2>&1; then
