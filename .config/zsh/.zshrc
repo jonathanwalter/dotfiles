@@ -25,14 +25,19 @@ unset ZSH_AUTOSUGGEST_USE_ASYNC
 # friendly names
 zstyle ':antidote:bundle' use-friendly-names 'yes'
 
+source $ZDOTDIR/path.zsh
 source $ZDOTDIR/alias.zsh
 source $ZDOTDIR/functions.zsh
 source $ZDOTDIR/misc.zsh
-source $ZDOTDIR/path.zsh
 source $ZDOTDIR/source.zsh
+
+# init mise
+eval "$(mise activate zsh)"
+
 
 # prompt stuff
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+[[ -f ~/.config/zsh/p10k.mise.zsh ]] && source ~/.config/zsh/p10k.mise.zsh
