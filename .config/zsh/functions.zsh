@@ -16,3 +16,8 @@ function gi() {
 function deleteline() {
   sed -i '' '${1}d' ${2}
 }
+
+function mkpw() {
+  [ -z $2 ] && echo "Need parametes for lenght and quantity" && return
+  cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9-_\$' | fold -w "${1}" | sed "${2}"q
+}
