@@ -32,7 +32,7 @@ if test ${SHELL} != "/bin/zsh"; then
     fi
 fi
 
-stow . -t $HOME --restow --dotfiles
+stow . -t "$HOME" --restow --dotfiles
 
 if test ! -r ~/.config/tmux/plugins/tpm; then
   git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
