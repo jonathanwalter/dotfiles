@@ -13,6 +13,8 @@ alias dg='dig +short'
 
 alias k='kubectl'
 
+alias passh='ssh -o PubkeyAuthentication=no -o PreferredAuthentications=password'
+
 alias l='ls -l'
 alias ll='ls -l'
 alias la='ls -A'
