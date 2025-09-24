@@ -1,0 +1,17 @@
+window-padding-x = 15
+window-padding-y = 10
+
+window-width = 115
+window-height = 25
+
+font-thicken = true
+font-size = 16
+# font-family = "MesloLGL Nerd Font Mono"
+
+theme = Catppuccin Mocha
+
+macos-titlebar-style = "tabs"
+
+shell-integration = zsh
+
+copy-on-select = clipboard
