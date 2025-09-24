@@ -26,3 +26,5 @@ fi
 
 # init krew
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+export EDITOR=zed
